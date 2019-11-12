@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 base_url = 'http://202.58.181.161:88/prototype_santoleo/#id=gewc5z&p=login&g=1'
+starting_id = 0
 
 # init driver
 profile = webdriver.FirefoxProfile()
@@ -35,3 +36,29 @@ def get_menu_items(soup):
 
 menus = get_menu_items(soap_sitemap_tree_container)
 
+# convert menus into psql query
+def print_query(id, name, order, subordinate):
+    print(f"INSERT INTO ms_menu(id, name, order, subordinate) VALUES ({id}, {name}, {order}, {subordinate})")
+
+def print_submenus(parent_id, menus):
+    id = parent_id
+    order = 1
+    for menu in menus:
+        id += 1
+        print_query(id, menu['curr'], order, parent_id)
+        order += 1
+        submenus = menu["children"]
+        id = print_submenus(id, menu["children"])
+
+    return id
+
+def menus_to_psql_query(menus):
+    id = starting_id
+    order = 1
+    for menu in menus:
+        id += 1
+        print_query(id, menu['curr'], order, 0)
+        order += 1
+        id = print_submenus(id, menu["children"])
+
+menus_to_psql_query(menus)
