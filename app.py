@@ -7,19 +7,19 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-base_url = 'http://202.58.181.161:88/prototype_santoleo/#id=gewc5z&p=login&g=1'
 starting_id = 0
+html_file = os.getcwd() + "//" + "menu.html"
 
 # init driver
 profile = webdriver.FirefoxProfile()
 profile.set_preference("javascript.enabled", True)
 driver = webdriver.Firefox(profile)
-driver.get(base_url)
+driver.get(f"file:///{html_file}")
 
-WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.ID, "sitemapHeader")))
+WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.ID, "sidebar-menu")))
 soup = BeautifulSoup(driver.page_source, "html")
 
-soap_sitemap_tree_container = soup.find("div", {"id": "sitemapTreeContainer"})
+soap_sitemap_tree_container = soup.find("div", {"id": "sidebar-menu"})
 
 def get_menu_items(soup):
     menus = []
@@ -27,11 +27,11 @@ def get_menu_items(soup):
     if soap_sitemap_tree == None: 
         return menus
 
-    soap_menus = soap_sitemap_tree.find_all("li", {"class": "sitemapNode"}, recursive=False)
+    soap_menus = soap_sitemap_tree.find_all("li", recursive=False)
     
     for soap_menu in soap_menus:
-        soap_menu_title = soap_menu.find("span", {"class": "sitemapPageName"})
-        menus.append({ "curr": soap_menu_title.text, "children": get_menu_items(soap_menu) })
+        soap_menu_title = soap_menu.find("a")
+        menus.append({ "curr": soap_menu_title.text.strip(), "children": get_menu_items(soap_menu) })
     return menus
 
 menus = get_menu_items(soap_sitemap_tree_container)

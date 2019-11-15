@@ -1,0 +1,266 @@
+<div class="sidebar" data-color="white" data-active-color="danger">
+    <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+    <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+            <div class="logo-image-small">
+                <img src="~/img/logo-small.png">
+            </div>
+        </a>
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+            Creative Tim
+        </a>
+    </div>
+    <div id="sidebar-menu" class="sidebar-wrapper">
+        <ul class="nav collapsible collapsible-accordion">
+            <li class="active ">
+                <a href="./dashboard.html">
+                    <i class="nc-icon nc-bank"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="parent" onclick="$(this).addClass('active')">
+                <a data-toggle="collapse" href="#sub-item-2">
+                    <i class="nc-icon nc-settings"></i>
+                    <p>
+                        Pengaturan Applikasi
+                        <span style="float: right;">
+                            <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                        </span>
+                    </p>
+                </a>
+                <ul class="collapse" id="sub-item-2">
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a data-toggle="collapse" href="#pengaturan-akses">
+                            <i class="nc-icon nc-lock-circle-open"></i>
+                            <p>
+                                Pengaturan Akses
+                                <span style="float: right;">
+                                    <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                                </span>
+                            </p>
+                        </a>
+                        <ul class="collapse" id="pengaturan-akses">
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#">
+                                    <i class="nc-icon nc-single-02"></i>User
+                                </a>
+                            </li>
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#">
+                                    <i class="nc-icon nc-key-25"></i>User Privileges
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a data-toggle="collapse" href="#data-utama">
+                            <i class="fa fa-database"></i>
+                            <p>
+                                Data Utama
+                                <span style="float: right;">
+                                    <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                                </span>
+                            </p>
+                        </a>
+                        <ul class="collapse" id="data-utama">
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#">Sekolah
+                                </a>
+                            </li>
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#">
+                                    <i class="nc-icon2 nc2-briefcase-24"></i>Jabatan
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a data-toggle="collapse"
+                           href="#tunjangan-potongan">
+                            <i class="nc-icon nc-money-coins"></i>
+                            <p style="font-size: 10px;">
+                                Tunjangan & Potongan
+                                <span style="float: right;">
+                                    <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                                </span>
+                            </p>
+                        </a>
+                        <ul class="collapse" id="tunjangan-potongan">
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#">
+                                    <i class="nc-icon nc-badge"></i>Karyawan Tetap
+                                </a>
+                            </li>
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#" style="margin-top: 0px;">
+                                    <i class="nc-icon nc-single-02"></i>Karyawan Honorer
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a href="#">
+                            <i class="nc-icon nc-settings-gear-65"></i>
+                            <p>Pengaturan Lain</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="parent" onclick="$(this).addClass('active')">
+                <a data-toggle="collapse" href="#sub-item-3">
+                    <i class="nc-icon2 nc2-badge-13"></i>
+                    <p>
+                        Karyawan
+                        <span style="float: right;">
+                            <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                        </span>
+                    </p>
+                </a>
+                <ul class="collapse" id="sub-item-3">
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            Registrasi Karyawan Baru
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            <i class="nc-icon2 nc2-multiple-11" style="font-size: 28px"></i>List Karyawan
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a data-toggle="collapse" href="#kenaikan">
+                            <i class="nc-icon2 nc2-award-48"></i>Kenaikan
+                            <span style="float: right;">
+                                <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                            </span>
+                        </a>
+                        <ul class="collapse" id="kenaikan">
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#">Rekomendasi Pengangkatan
+                                </a>
+                            </li>
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#" style="margin-top: 0px;">Rekomendasi Kenaikan Golongan
+                                </a>
+                            </li>
+                            <li class="child" onclick="$(this).addClass('active')">
+                                <a class="" href="#" style="margin-top: 0px;">
+                                    <i class="nc-icon nc-badge"></i>Rekomendasi Kenaikan Berkala
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="parent" onclick="$(this).addClass('active')">
+                <a data-toggle="collapse" href="#sub-item-7">
+                    <i class="nc-icon nc-bell-55"></i>
+                    <p>
+                        Notifikasi
+                        <span style="float: right;">
+                            <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                        </span>
+                    </p>
+                </a>
+                <ul class="collapse" id="sub-item-7">
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            Rekomendasi Kenaikan
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            <i class="nc-icon nc-bell-55"></i>Notifikasi Gaji Bulanan
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="parent" onclick="$(this).addClass('active')">
+                <a data-toggle="collapse" href="#laporan">
+                    <i class="nc-icon2 nc2-archive-paper"></i>
+                    <p>
+                        Laporan
+                        <span style="float: right;">
+                            <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                        </span>
+                    </p>
+                </a>
+                <ul class="collapse" id="laporan">
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            <i class="nc-icon2 nc2-notes"></i>Slip Gaji Tetap
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            <i class="nc-icon2 nc2-notes"></i>Slip Gaji Honorer
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            <img src="~/img/kenaikan-golongan.svg"
+                                 style="width: 30px;margin-right: 7px;margin-left: 5px;">
+                            Laporan
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="parent" onclick="$(this).addClass('active')">
+                <a data-toggle="collapse" href="#sub-item-4">
+                    <p>
+                        <img src="~/img/transaksi-keuangan.png" style="width: 35px;margin-right: 7px;">
+                        Transaksi
+                        <span style="float: right;">
+                            <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                        </span>
+                    </p>
+                </a>
+                <ul class="collapse" id="sub-item-4">
+                    <li class="child" onclick="$(this).addClass('active active-icon')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            <img src="~/img/payroll-bulanan.svg" style="width: 35px;margin-right: 7px;">
+                            Payroll Bulanan
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active active-icon')">
+                        <a class="" href="#" style="margin-top: 0px;">
+                            <img src="~/img/payroll-bulanan.svg" style="width: 35px;margin-right: 7px;">
+                            Payroll THR
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active active-icon')">
+                        <a class="" href="#hutang-karyawan" style="margin-top: 0px;">
+                            <img src="~/img/hutang-karyawan.svg" style="width: 35px;margin-right: 7px;">
+                            Hutang Karyawan
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="parent" onclick="$(this).addClass('active')">
+                <a data-toggle="collapse" href="#sub-item-6">
+                    <i class="nc-icon nc-alert-circle-i"></i>
+                    <p>
+                        Panduan
+                        <span style="float: right;">
+                            <span class="fa fa-chevron-down" style="color: #A19E9A;"></span>
+                        </span>
+                    </p>
+                </a>
+                <ul class="collapse" id="sub-item-6">
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#">
+                            <img src="~/img/panduan-yayasan.svg" style="width: 30px;margin-right: 12px;">Panduan Yayasan
+                        </a>
+                    </li>
+                    <li class="child" onclick="$(this).addClass('active')">
+                        <a class="" href="#">
+                            <img src="~/img/panduan-keuangan.svg" style="width: 30px;margin-right: 12px;">Panduan Keuangan
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
